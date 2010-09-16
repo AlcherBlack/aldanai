@@ -4,7 +4,7 @@
 
 If I'm not mistaken, these are directly imported into the genome decryption class from the file
 
-
+{{{
 Service stuff:
 	0 = [end]
 	1 = [if]
@@ -42,3 +42,4 @@ Service stuff:
 	80 = no action 
 	81 = put one in memory bit 0
 	82 = put zero in memory bit 0
+}}}
