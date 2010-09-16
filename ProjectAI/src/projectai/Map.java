@@ -6,7 +6,7 @@ package projectai;
  * @author alcher
  */
 public class Map {
-    int width=20;//hurray to shit code )
+    int width=20;//hurray to shit code //indeed
     int height=20;
     int[][] map; //dynamic, map = new int[map_width][map_height];
     String map_string;
