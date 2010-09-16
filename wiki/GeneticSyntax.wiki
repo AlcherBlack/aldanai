@@ -2,7 +2,7 @@
 
 = Introduction =
 
-If I'm not mistaken, these are directly imported into the genome decryption class from the file
+If I'm not mistaken, these are directly imported into the genome decryption class from the file.
 
 {{{
 ;1=10 = service stuff
