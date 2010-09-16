@@ -1,0 +1,6 @@
+ver=0.1
+
+;size of a single generation, 10 is default
+gerneration_size=10
+
+

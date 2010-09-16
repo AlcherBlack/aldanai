@@ -1,0 +1,7 @@
+ver=0.1
+single_map=true
+map_path=default.txt
+
+map_width=20
+map_height=20
+
