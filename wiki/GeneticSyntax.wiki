@@ -5,12 +5,12 @@
 If I'm not mistaken, these are directly imported into the genome decryption class from the file
 
 
-;1=10 = service stuff
+Service stuff:
 	0 = [end]
 	1 = [if]
 
 
-;11=50 = conditions
+11=50 = conditions:
 	11 = (wall in front)
 	12 = (enemy in front)
 	13 = (wall to the left)
@@ -26,20 +26,19 @@ If I'm not mistaken, these are directly imported into the genome decryption clas
 	35 = (no wall to the right)
 	36 = (no enemy to the right)
 	37 = (no wall behind)
-	38 = (no enemy behind)
-	
-	;includes right in front
+	38 = (no enemy behind) 
+
+(includes right in front)
 	42 = (enemy far in front) 
 	50 = (random)
 
 
-;51-80 - active actions
+51-80 - active actions:
 	51 = move forward
 	55 = turn right
 	56 = turn left
 	60 = shoot
-	79 = death
-	;this is when the robot is already dead and nowhere to be found
+	79 = death (this is when the robot is already dead and nowhere to be found)
 	80 = no action 
 	81 = put one in memory bit 0
 	82 = put zero in memory bit 0
