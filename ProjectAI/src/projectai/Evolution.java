@@ -38,6 +38,7 @@ public class Evolution {
 
            generation++;
            Frame.AddMessage("Generation "+generation+"\n");
+           Frame.AddNewRoundToList("Generation "+generation);
            cGame game = new cGame(map,robots);
            game.Game(generation);
 
