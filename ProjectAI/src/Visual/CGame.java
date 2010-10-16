@@ -97,20 +97,10 @@ public class CGame
         if (isPaintingEnabled) frame.Canvas.start(); else frame.Canvas.stop();
     }
     public CGame(){}
-    public CGame(CVisualizer _Visualizer) throws FileNotFoundException
+    public CGame(CVisualizer _Visualizer,File _GameFile) throws FileNotFoundException
     {
         Visualizer = _Visualizer;
-        JFileChooser FileChooser = new JFileChooser();
-
-        FileChooser.setFileFilter(new FileNameExtensionFilter("GameFile", "txt"));
-        FileChooser.setDialogTitle("Chose the Game");
-        FileChooser.setCurrentDirectory(new File(System.getProperty("user.dir")));
-        int Replay = FileChooser.showOpenDialog(null);
-        if ((Replay == JFileChooser.CANCEL_OPTION)||(Replay == JFileChooser.ERROR_OPTION)) System.exit(0);
-        GameFile = FileChooser.getSelectedFile();
-
-        if (GameFile == null) System.exit(0);
-
+        GameFile = _GameFile;
         Properties GameProperties = new Properties();
         try
         {

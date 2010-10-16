@@ -361,9 +361,8 @@ public class cGame {
             GameFile.setProperty("rb"+i+"_code", robots[i].code);
         }
 
-        
         try {
-            GameFile.store(new FileOutputStream(System.getProperty("user.dir")+fs+"Data"+fs+"test1"+fs+"Games"+fs+"round"+generation+".txt"),null); //TODO: change folders and format
+            GameFile.store(new FileOutputStream(System.getProperty("user.dir")+fs+"Data"+fs+"test1"+fs+"Games"+fs+"Generation "+generation+".txt"),null); //TODO: change folders and format
         } catch (IOException ex) {
             System.out.println("Failed to save round "+generation);
         }

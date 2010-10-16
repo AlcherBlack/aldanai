@@ -740,7 +740,7 @@ public class Drawer extends JFrame {
     private void jOpenInNewWindowMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jOpenInNewWindowMenuItemActionPerformed
         CVisualizer.SaveWindowBounds(getX(),getY(),getWidth(),getHeight());
         try {
-            CVisualizer.mainGame.add(new CGame(CGame.Visualizer));
+            CGame.Visualizer.NewGame();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Drawer.class.getName()).log(Level.SEVERE, null, ex);
         }
