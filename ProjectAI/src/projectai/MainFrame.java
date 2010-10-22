@@ -271,9 +271,9 @@ public class MainFrame extends javax.swing.JFrame {
        btnStop.setEnabled(false);
        txtEvolutionConfigPath.setText(System.getProperty("user.dir")+fs+"Data"+fs+"test1"+fs+"EvolutionConfig.txt");
        txtMapgenConfigPath.setText(System.getProperty("user.dir")+fs+"Data"+fs+"test1"+fs+"MapgenConfig.txt");
-       MainTextArea.append("Initializing program...\n");
-       MainTextArea.append("Done.\n");
-       MainTextArea.append("Please load configuration files so the evolution may begin.\n");
+       AddMessage("Initializing program...\n");
+       AddMessage("Done.\n");
+       AddMessage("Please load configuration files so the evolution may begin.\n");
     }//GEN-LAST:event_formWindowOpened
 
     Properties EvolutionConfigFile = new Properties();
@@ -284,14 +284,13 @@ public class MainFrame extends javax.swing.JFrame {
              EvolutionConfigFile.load(new FileInputStream(txtEvolutionConfigPath.getText()));
 
              EvolutionConfig.gerneration_size = Integer.valueOf(EvolutionConfigFile.getProperty("generation_size", "10"));
-             MainTextArea.append("Evolution configuration file loaded successfully.\n\tVersion is "+EvolutionConfigFile.getProperty("ver","default")+"\n");
-             
+             AddMessage("Evolution configuration file loaded successfully.\n\tVersion is "+EvolutionConfigFile.getProperty("ver","default")+"\n");
               }
 
              //catch exception in case properties file does not exist
              catch(IOException e)
              {
-             MainTextArea.append(txtEvolutionConfigPath.getText()+" loading failed.\n");
+                 AddMessage(txtEvolutionConfigPath.getText()+" loading failed.\n");
              }
     }//GEN-LAST:event_btnEvolutionConfigLoadActionPerformed
 
@@ -308,10 +307,11 @@ public class MainFrame extends javax.swing.JFrame {
                 MapgenConfig.map_path=MapgenConfigFile.getProperty("map_path","default_map.txt");
                 try {
                     MapFile.load(new FileInputStream(System.getProperty("user.dir")+fs+"Data"+fs+"test1"+fs+"maps"+fs+MapgenConfig.map_path));
-                    MainTextArea.append(MapgenConfig.map_path+" map file loaded successfully.\n");
+                    AddMessage(MapgenConfig.map_path+" map file loaded successfully.\n");
                 }
-                catch(IOException e) {
-                    MainTextArea.append(MapgenConfig.map_path+" loading failed.\n");
+                catch(IOException e) 
+                {
+                    AddMessage(MapgenConfig.map_path+" loading failed.\n");
                 }
                 MapgenConfig.map_width=Integer.valueOf(MapFile.getProperty("width","10"));
                 MapgenConfig.map_height=Integer.valueOf(MapFile.getProperty("height","10"));
@@ -319,31 +319,31 @@ public class MainFrame extends javax.swing.JFrame {
              } else {
                 //implement interaction with Ilya
              }
-             MainTextArea.append("Mapgen configuration file loaded successfully.\n\tVersion is "+MapgenConfigFile.getProperty("ver")+"\n");
+             AddMessage("Mapgen configuration file loaded successfully.\n\tVersion is "+MapgenConfigFile.getProperty("ver")+"\n");
               }
 
              //catch exception in case properties file does not exist
              catch(IOException e)
              {
-             MainTextArea.append(txtMapgenConfigPath.getText()+" loading failed.\n");
+                 AddMessage(txtMapgenConfigPath.getText()+" loading failed.\n");
              }
     }//GEN-LAST:event_btnMapgenConfigLoadActionPerformed
 
     private void btnEvolutionBeginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEvolutionBeginActionPerformed
         if ((!EvolutionConfigFile.isEmpty())&&(!MapgenConfigFile.isEmpty())) {
-            MainTextArea.append("Let the Lolevolution™ begin!\n");
+            AddMessage("Let the Lolevolution™ begin!\n");
             Evolution evolution = new Evolution(this);
             btnStop.setEnabled(true);
             evolution.Start();
 
             list1.setEnabled(false);            
         }
-        else {MainTextArea.append("Please load all the configs.\n");}
+        else {AddMessage("Please load all the configs.\n");}
 }//GEN-LAST:event_btnEvolutionBeginActionPerformed
 
     private void btnStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStopActionPerformed
         btnStop.setEnabled(false);
-        MainTextArea.append("Stopping evolution. Please wait...\n");
+        AddMessage("Stopping evolution. Please wait...\n");
         StopEvolution=true;
         list1.setEnabled(true);
     }//GEN-LAST:event_btnStopActionPerformed
