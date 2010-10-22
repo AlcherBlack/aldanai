@@ -194,12 +194,12 @@ public class cGame {
                      robots[i].action=55;
                      robots[i].heading=robots[i].heading+1;
                      if (robots[i].heading==4) {robots[i].heading=0;}
-                     break;
+                     break;//you need to add return true here? (danich)
             case 56: //kk let's turn LEFT
                      robots[i].action=56;
                      robots[i].heading=robots[i].heading-1;
                      if (robots[i].heading==-1) {robots[i].heading=3;}
-                     break;
+                     break;//you need to add return true here? (danich)
             case 60: //shoot
                      robots[i].action=60;
                      if (CheckBulletPath(robots[i].x,robots[i].y,robots[i].heading,true,false)) {
