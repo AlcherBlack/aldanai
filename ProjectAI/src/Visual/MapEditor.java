@@ -239,7 +239,7 @@ public class MapEditor extends javax.swing.JFrame {
     }//GEN-LAST:event_jSaveButtonActionPerformed
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
-        CMapObject MapElement = Game.FindElementHereXY(evt.getX(), evt.getY(), true,Map,d);
+        CMapObject MapElement = Game.FindMapElementHereXY(evt.getX(), evt.getY(), true,Map,d);
         if (MapElement != null)
         {
             MapElement.ChangeType(jComboBox1.getSelectedIndex());

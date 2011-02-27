@@ -332,11 +332,11 @@ public class CGame
     void ChangeDirection(int dir) { setGameDirection(dir); }
     void ChangeDirection() { setGameDirection(getGameDirection() * -1); }
 
-    public CMapObject FindElementHereXY(int x,int y,boolean CanBeNotTargetable,ArrayList<CMapObject> Elements,float d)
+    public CMapObject FindMapElementHereXY(int x,int y,boolean CanBeNotTargetable,ArrayList<CMapObject> Elements,float d)
     {
-        return (CMapObject) FindElementHereXY(x, y, CanBeNotTargetable,new ArrayList<CGameObject>(Elements), d);
+        return (CMapObject) FindGameElementHereXY(x, y, CanBeNotTargetable,new ArrayList<CGameObject>(Elements), d);
     }
-    public CGameObject FindElementHereXY(int x,int y,boolean CanBeNotTargetable,ArrayList<CGameObject> Elements,float d)
+    public CGameObject FindGameElementHereXY(int x,int y,boolean CanBeNotTargetable,ArrayList<CGameObject> Elements,float d)
     {
         for (int i = 0; i < Elements.size(); ++i)
         {
@@ -352,7 +352,7 @@ public class CGame
     }
     public CGameObject FindElementHereXY(int x,int y)
     {
-        return FindElementHereXY(x, y,true,GameElements,ElementSize);
+        return FindGameElementHereXY(x, y,true,GameElements,ElementSize);
     }
 
     private void FindAimsForRobots()
@@ -367,7 +367,7 @@ public class CGame
             for (int i = 1; i < Math.max(Width,Height); i++)
             {
                 
-                Aim = FindElementHereXY((int) Math.round((r[j].X - (dir-2)*(dir%2)*i) * d+d/2), (int) Math.round((r[j].Y + (dir-1)*(-dir%2+1)*i) * d+d/2),false,GameElements,ElementSize);
+                Aim = FindGameElementHereXY((int) Math.round((r[j].X - (dir-2)*(dir%2)*i) * d+d/2), (int) Math.round((r[j].Y + (dir-1)*(-dir%2+1)*i) * d+d/2),false,GameElements,ElementSize);
 
                 if (Aim != null)
                 {
