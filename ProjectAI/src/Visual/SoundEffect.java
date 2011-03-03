@@ -47,8 +47,8 @@ public enum SoundEffect {
             clip = AudioSystem.getClip();
             // Open audio clip and load samples from the audio input stream.
             clip.open(audioInputStream);
-            fc = (FloatControl) clip.getControl(FloatControl.Type.SAMPLE_RATE);
-            DefaultSampleRate = fc.getValue();
+            //fc = (FloatControl) clip.getControl(FloatControl.Type.SAMPLE_RATE);
+            //DefaultSampleRate = fc.getValue();
             
         } catch (UnsupportedAudioFileException e) {
             e.printStackTrace();
