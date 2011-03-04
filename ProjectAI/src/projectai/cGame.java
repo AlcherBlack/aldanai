@@ -70,6 +70,7 @@ public class cGame {
                //parse returns TRUE if action successfull
                //80 - idle
 
+               //checked in March 2011, should work fine. Alcher
                if ((!robots[i].dead)&&(Parse(robots[i].code,i)==false)) {
                    if (robots[i].action!=80) {
                        robots[i].result=false;
@@ -146,6 +147,7 @@ public class cGame {
                }
 
     //nothing happened
+    //this only happens if none of the checks returned true (or if there is an error lol)
     robots[i].action=80;
     return false;
     }
@@ -194,12 +196,12 @@ public class cGame {
                      robots[i].action=55;
                      robots[i].heading=robots[i].heading+1;
                      if (robots[i].heading==4) {robots[i].heading=0;}
-                     break;//you need to add return true here? (danich)
+                     return true;
             case 56: //kk let's turn LEFT
                      robots[i].action=56;
                      robots[i].heading=robots[i].heading-1;
                      if (robots[i].heading==-1) {robots[i].heading=3;}
-                     break;//you need to add return true here? (danich)
+                     return true;
             case 60: //shoot
                      robots[i].action=60;
                      if (CheckBulletPath(robots[i].x,robots[i].y,robots[i].heading,true,false)) {
