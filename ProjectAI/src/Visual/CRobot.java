@@ -157,7 +157,7 @@ import java.util.logging.Logger;
         HealthBarWidth = d/16.0f;
         RobotSize = d*7.0f/10.0f;
         HealthBarSize = (RobotSize*9.0f/13.0f-1.0f);
-        SoundEffect.SetDeltaSampleRate(Game.getSpeed()/0.029227138f);
+        //SoundEffect.SetDeltaSampleRate(Game.getSpeed()/0.029227138f);
     }
     void Draw(Graphics2D g,float  d)
     {
